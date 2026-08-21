@@ -384,11 +384,14 @@
       try {
         const ctrl = new AbortController();
         const t = setTimeout(() => ctrl.abort(), 12000);
-        const res = await fetch('contact.php', {
+        const res = await fetch('/api/contact', {
           method: 'POST',
-          body: data,
+          body: JSON.stringify(payload),
           signal: ctrl.signal,
-          headers: { 'X-Requested-With': 'XMLHttpRequest' }
+          headers: { 
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest' 
+          }
         });
         clearTimeout(t);
 
