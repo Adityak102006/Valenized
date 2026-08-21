@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Works — VALENIZED</title>
+  <meta name="description" content="Works by VALENIZED — lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+  <meta name="theme-color" content="#050507" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23050507'/%3E%3Ctext x='16' y='22' font-family='serif' font-size='22' font-style='italic' fill='%23a855f7' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/animations.css" />
+  
+  
+</head>
+<body class="page-works">
+
+  <div class="grain-canvas"></div>
+  <div class="scanlines"></div>
+  <div class="blob"></div>
+  <div class="blob-2"></div>
+  
+  
+
+  <div class="loader">
+    <div class="loader-text">
+      <span>W</span><span>O</span><span>R</span><span>K</span><span>S</span>
+    </div>
+    <div class="loader-percent">000</div>
+    <div class="loader-bar"></div>
+  </div>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">VALENIZED</a>
+    <ul class="nav-links">
+      <li><a href="index.html"      data-transition>Index</a></li>
+      <li><a href="about.html"                       data-transition>About</a></li>
+      <li><a href="works.html"   class="is-active"  data-transition>Works</a></li>
+      <li><a href="contact.html"                     data-transition>Contact</a></li>
+      <li><a href="terms.html"                       data-transition>Terms</a></li>
+    </ul>
+    <button class="menu-toggle" aria-label="menu"><span></span></button>
+  </nav>
+
+  <main>
+
+    <div class="page-header">
+      <div class="container">
+        <div>
+          <div class="eyebrow" data-reveal>— The Archive</div>
+          <h1 class="reveal-text" style="margin-top:1rem;"><span>Selected<br/>works<span class="accent">,</span></span></h1>
+          <h1 class="reveal-text"><span>Lorem ipsum<span class="accent">.</span></span></h1>
+        </div>
+        <div class="meta">
+          <div>Total works · <span class="num">07</span></div>
+          <div>Last updated · <span class="num" id="upd">Aug 2026</span></div>
+          <div>Disciplines · <span class="num">04</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-bar" id="filterBar">
+      <button class="filter is-active magnetic" data-cat="all">All · 07</button>
+      <button class="filter magnetic" data-cat="motion">Motion · 02</button>
+      <button class="filter magnetic" data-cat="3d">3D Sculpture · 03</button>
+      <button class="filter magnetic" data-cat="illustration">Illustration · 02</button>
+      <button class="filter magnetic" data-cat="apparel">Apparel · 01</button>
+      <button class="filter magnetic" data-cat="editorial">Editorial · 02</button>
+      <button class="filter magnetic" data-cat="photography">Photography · 01</button>
+    </div>
+
+    <section class="gallery-section" style="padding:3rem;">
+      <div class="container">
+        <div class="gallery">
+
+          <div class="tile s-12" data-cat="motion 3d">
+            <canvas class="shader"></canvas>
+            <img class="tile-img" src="assets/01-chrome-sculpt.jpg" alt="Lorem ipsum work 01" />
+            <div class="tile-meta">
+              <div>
+                <h3>Lorem Ipsum №01</h3>
+                <span class="tg">3D · Motion Reel</span>
+              </div>
+              <span class="idx">/01</span>
+            </div>
+          </div>
+
+          <div class="tile s-7" data-cat="motion 3d editorial">
+            <canvas class="shader"></canvas>
+            <img class="tile-img" src="assets/03-silver-sculpt.jpg" alt="Lorem ipsum work 02" />
+            <div class="tile-meta">
+              <div>
+                <h3>Dolor Sit Amet</h3>
+                <span class="tg">3D Sculpture</span>
+              </div>
+              <span class="idx">/02</span>
+            </div>
+          </div>
+
+          <div class="tile s-5" data-cat="3d">
+            <canvas class="shader"></canvas>
+            <img class="tile-img" src="assets/02-blue-abstract.jpg" alt="Lorem ipsum work 03" />
+            <div class="tile-meta">
+              <div>
+                <h3>Consectetur Elit</h3>
+                <span class="tg">Abstract · 3D</span>
+              </div>
+              <span class="idx">/03</span>
+            </div>
+          </div>
+
+          <div class="tile s-6" data-cat="illustration editorial">
+            <canvas class="shader"></canvas>
+            <img class="tile-img" src="assets/06-samurai.jpg" alt="Lorem ipsum work 04" />
+            <div class="tile-meta">
+              <div>
+                <h3>Sed Tempor</h3>
+                <span class="tg">Illustration</span>
+              </div>
+              <span class="idx">/04</span>
+            </div>
+          </div>
+
+          <div class="tile s-6" data-cat="editorial illustration">
+            <canvas class="shader"></canvas>
+            <img class="tile-img" src="assets/05-miku-header.jpg" alt="Lorem ipsum work 05" />
+            <div class="tile-meta">
+              <div>
+                <h3>Magna Labore / 39</h3>
+                <span class="tg">Editorial Header</span>
+              </div>
+              <span class="idx">/05</span>
+            </div>
+          </div>
+
+          <div class="tile s-4" data-cat="photography editorial">
+            <canvas class="shader"></canvas>
+            <img class="tile-img" src="assets/04-ocean.jpg" alt="Lorem ipsum work 06" />
+            <div class="tile-meta">
+              <div>
+                <h3>Ut Enim Minim</h3>
+                <span class="tg">Photo / Editorial</span>
+              </div>
+              <span class="idx">/06</span>
+            </div>
+          </div>
+
+          <div class="tile s-8" data-cat="apparel product">
+            <canvas class="shader"></canvas>
+            <img class="tile-img" src="assets/07-tribal-tee.jpg" alt="Lorem ipsum work 07" />
+            <div class="tile-meta">
+              <div>
+                <h3>Veniam Quis — №08 BACK</h3>
+                <span class="tg">Apparel / Drop</span>
+              </div>
+              <span class="idx">/07</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true" style="border-top:1px solid var(--line);">
+      <div class="marquee-track">
+        <span>Lorem <span class="star">✦</span></span>
+        <span>Ipsum <span class="star">✦</span></span>
+        <span>Dolor <span class="star">✦</span></span>
+        <span>Sit <span class="star">✦</span></span>
+        <span>Amet <span class="star">✦</span></span>
+        <span>Lorem <span class="star">✦</span></span>
+        <span>Ipsum <span class="star">✦</span></span>
+        <span>Dolor <span class="star">✦</span></span>
+        <span>Sit <span class="star">✦</span></span>
+        <span>Amet <span class="star">✦</span></span>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>
+        <h4>— Studio</h4>
+        <div class="colophon">Valenized<span style="color:var(--accent);">.</span></div>
+        <p class="footer-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div>
+        <h4>— Navigate</h4>
+        <ul>
+          <li><a href="index.html" data-transition>Index</a></li>
+          <li><a href="about.html" data-transition>About</a></li>
+          <li><a href="works.html" data-transition>Works</a></li>
+          <li><a href="contact.html" data-transition>Contact</a></li>
+          <li><a href="terms.html" data-transition>Terms</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>— Contact</h4>
+        <ul>
+          <li><a href="mailto:inquire@valenized.com">inquire@valenized.com</a></li>
+        </ul>
+      </div>
+      <div class="legal" style="grid-column:1 / -1;">
+        <span>© <span id="yr">2026</span> Valenized Studio — All rights reserved.</span>
+        <span>Designed in-house · <a href="terms.html" data-transition style="color:var(--ink-dim);">Terms</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/app.js"></script>
+  
+  <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
