@@ -405,10 +405,8 @@
           throw new Error('bad status');
         }
       } catch (err) {
-        // graceful fallback — local dev has no PHP, so show offline success
-        console.warn('contact submit fallback:', err);
-        if (success) success.classList.add('is-shown');
-        form.querySelectorAll('input, textarea, select').forEach(el => { el.disabled = true; });
+        console.error('contact submit error:', err);
+        if (error) error.classList.add('is-shown');
       } finally {
         btn.textContent = 'Send Inquiry →';
         btn.disabled = false;
