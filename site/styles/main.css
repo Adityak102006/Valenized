@@ -282,17 +282,22 @@ body { min-height: 100vh; position: relative; }
   /* --- overlay container --- */
   .nav-links {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;                   /* dynamic viewport for mobile browsers */
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0;                           /* gap handled per-item */
+    gap: 0.5rem;
     padding: 0;
     margin: 0;
     list-style: none;
     z-index: 300;
 
-    /* clip-path curtain: starts as a thin horizontal slit at top */
+    /* clip-path curtain: starts collapsed at top */
     clip-path: inset(0 0 100% 0);
     background: rgba(5, 5, 7, 0.97);
     backdrop-filter: blur(40px) saturate(140%);
