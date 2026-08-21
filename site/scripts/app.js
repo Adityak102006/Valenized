@@ -183,7 +183,6 @@
   const navL = $('.nav-links');
   if (toggle && navL) {
     toggle.addEventListener('click', (e) => {
-      e.stopPropagation();
       const open = !navL.classList.contains('is-open');
       navL.classList.toggle('is-open', open);
       toggle.classList.toggle('is-open', open);
