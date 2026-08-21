@@ -134,10 +134,16 @@ body { min-height: 100vh; position: relative; }
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+.nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: rgba(5, 5, 7, 0.78);
   backdrop-filter: blur(18px) saturate(160%);
   -webkit-backdrop-filter: blur(18px) saturate(160%);
-  border-bottom: 1px solid var(--line);
 }
 
 .nav-logo {
