@@ -1,8 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/((?!api/|site/).*)",
-      "destination": "/site/$1"
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/site/:path*"
     }
   ]
 }
