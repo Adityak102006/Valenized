@@ -353,8 +353,7 @@ body { min-height: 100vh; position: relative; }
   .nav-links li {
     width: 100%;
     text-align: center;
-    overflow: hidden;
-    padding: 0.1rem 0;
+    padding: 0.15rem 0;
     position: relative;
     /* stagger via CSS custom property set in JS */
     --item-delay: 0s;
@@ -362,17 +361,17 @@ body { min-height: 100vh; position: relative; }
 
   .nav-links li a {
     position: relative;
-    display: inline-block;          /* inline-block keeps text truly centered */
+    display: inline-block;
     font-family: var(--font-display);
-    font-size: clamp(2rem, 8vw, 4rem);
+    font-size: clamp(2rem, 8vw, 3.6rem);
     font-style: italic;
     font-weight: 400;
     letter-spacing: -0.02em;
     text-transform: none;
     color: var(--ink-dim);
     text-decoration: none;
-    padding: 0.55rem 2rem;          /* horizontal padding gives room for the badge */
-    line-height: 1.1;
+    padding: 0.5rem 0;
+    line-height: 1.15;
 
     /* slide up from below */
     transform: translateY(60px);
@@ -383,29 +382,15 @@ body { min-height: 100vh; position: relative; }
       color     0.3s  var(--ease-out);
   }
 
-  /* numeric index badge — absolutely placed so it never shifts text */
-  .nav-links li a::before {
-    content: attr(data-index);
-    position: absolute;
-    left: -0.5rem;                  /* float left of the text block */
-    top: 50%;
-    transform: translateY(-50%);
-    font-family: var(--font-mono);
-    font-size: 0.58rem;
-    font-style: normal;
-    letter-spacing: 0.18em;
-    color: var(--accent);
-    opacity: 0.5;
-    transition: opacity 0.3s;
-  }
-
-  /* accent underline on hover */
+  /* reset desktop underline styles inside mobile overlay */
   .nav-links li a::after {
     content: '';
     display: block;
     position: absolute;
-    bottom: 0.35rem; left: 2rem; right: 2rem;
-    height: 1px;
+    bottom: 0.2rem;
+    left: 0; right: 0;
+    width: auto;                    /* override desktop width:0 */
+    height: 2px;
     background: var(--accent);
     transform: scaleX(0);
     transform-origin: right;
@@ -413,11 +398,10 @@ body { min-height: 100vh; position: relative; }
   }
 
   .nav-links li a:hover { color: #fff; }
-  .nav-links li a:hover::before { opacity: 1; }
   .nav-links li a:hover::after  { transform: scaleX(1); transform-origin: left; }
 
   .nav-links li a.is-active { color: #fff; }
-  .nav-links li a.is-active::before { opacity: 1; }
+  .nav-links li a.is-active::after { transform: scaleX(1); transform-origin: left; }
 
   /* --- links animate IN when overlay is open --- */
   .nav-links.is-open li a {
