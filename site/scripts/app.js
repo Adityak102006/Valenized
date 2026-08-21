@@ -182,14 +182,18 @@
   const toggle = $('.menu-toggle');
   const navL = $('.nav-links');
   if (toggle && navL) {
+    toggle.setAttribute('aria-expanded', 'false');
     toggle.addEventListener('click', (e) => {
+      e.stopPropagation();                          // prevent bubbling to doc listener
       const open = !navL.classList.contains('is-open');
       navL.classList.toggle('is-open', open);
       toggle.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
     });
     navL.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
       navL.classList.remove('is-open');
       toggle.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
     }));
     // click outside to close
     document.addEventListener('click', (e) => {
@@ -197,6 +201,7 @@
       if (e.target.closest('.nav-links') || e.target.closest('.menu-toggle')) return;
       navL.classList.remove('is-open');
       toggle.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
     });
   }
 
