@@ -277,7 +277,12 @@ body { min-height: 100vh; position: relative; }
    MOBILE / TABLET (≤ 1024px) — fullscreen overlay
    ------------------------------------------------ */
 @media (max-width: 1024px) {
-  .menu-toggle { display: flex; }
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
   /* --- overlay container --- */
   .nav-links {
