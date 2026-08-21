@@ -182,10 +182,30 @@
   const toggle = $('.menu-toggle');
   const navL = $('.nav-links');
   if (toggle && navL) {
+    // inject stagger delays + data-index on each item
+    const items = Array.from(navL.querySelectorAll('li'));
+    items.forEach((li, i) => {
+      li.style.setProperty('--item-delay', `${0.12 + i * 0.07}s`);
+      const a = li.querySelector('a');
+      if (a) a.setAttribute('data-index', String(i + 1).padStart(2, '0'));
+    });
+
     toggle.setAttribute('aria-expanded', 'false');
     toggle.addEventListener('click', (e) => {
       e.stopPropagation();                          // prevent bubbling to doc listener
       const open = !navL.classList.contains('is-open');
+
+      // on close: reverse stagger (last item animates out first)
+      if (!open) {
+        items.forEach((li, i) => {
+          li.style.setProperty('--item-delay', `${(items.length - 1 - i) * 0.04}s`);
+        });
+      } else {
+        items.forEach((li, i) => {
+          li.style.setProperty('--item-delay', `${0.12 + i * 0.07}s`);
+        });
+      }
+
       navL.classList.toggle('is-open', open);
       toggle.classList.toggle('is-open', open);
       toggle.setAttribute('aria-expanded', String(open));
