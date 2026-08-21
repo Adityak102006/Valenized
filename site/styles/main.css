@@ -355,15 +355,14 @@ body { min-height: 100vh; position: relative; }
     text-align: center;
     overflow: hidden;
     padding: 0.1rem 0;
+    position: relative;
     /* stagger via CSS custom property set in JS */
     --item-delay: 0s;
   }
 
   .nav-links li a {
     position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 1.4rem;
+    display: inline-block;          /* inline-block keeps text truly centered */
     font-family: var(--font-display);
     font-size: clamp(2rem, 8vw, 4rem);
     font-style: italic;
@@ -372,7 +371,7 @@ body { min-height: 100vh; position: relative; }
     text-transform: none;
     color: var(--ink-dim);
     text-decoration: none;
-    padding: 0.55rem 0;
+    padding: 0.55rem 2rem;          /* horizontal padding gives room for the badge */
     line-height: 1.1;
 
     /* slide up from below */
@@ -384,17 +383,19 @@ body { min-height: 100vh; position: relative; }
       color     0.3s  var(--ease-out);
   }
 
-  /* numeric index badge beside each link */
+  /* numeric index badge — absolutely placed so it never shifts text */
   .nav-links li a::before {
     content: attr(data-index);
+    position: absolute;
+    left: -0.5rem;                  /* float left of the text block */
+    top: 50%;
+    transform: translateY(-50%);
     font-family: var(--font-mono);
-    font-size: 0.62rem;
+    font-size: 0.58rem;
     font-style: normal;
     letter-spacing: 0.18em;
     color: var(--accent);
-    opacity: 0.6;
-    align-self: flex-start;
-    margin-top: 0.55rem;
+    opacity: 0.5;
     transition: opacity 0.3s;
   }
 
@@ -403,7 +404,7 @@ body { min-height: 100vh; position: relative; }
     content: '';
     display: block;
     position: absolute;
-    bottom: 0.45rem; left: 0; right: 0;
+    bottom: 0.35rem; left: 2rem; right: 2rem;
     height: 1px;
     background: var(--accent);
     transform: scaleX(0);
@@ -415,9 +416,7 @@ body { min-height: 100vh; position: relative; }
   .nav-links li a:hover::before { opacity: 1; }
   .nav-links li a:hover::after  { transform: scaleX(1); transform-origin: left; }
 
-  .nav-links li a.is-active {
-    color: #fff;
-  }
+  .nav-links li a.is-active { color: #fff; }
   .nav-links li a.is-active::before { opacity: 1; }
 
   /* --- links animate IN when overlay is open --- */
